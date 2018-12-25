@@ -4,12 +4,16 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
-        r=range(2,n)
-        for ii in range(2,n):
-            for jj in range(2*ii,n,ii):
-                if jj in r:
-                    r.remove(jj)
-        return r
+        yes_primes=[]
+        not_primes=set()
+
+        for ii in xrange(2,n):
+            if ii in not_primes:
+                continue
+            for jj in xrange(2*ii,n,ii):
+                not_primes.add(jj)
+            yes_primes.append(ii)
+        return yes_primes
 
     def countPrimes(self, n):
         """
@@ -21,6 +25,14 @@ class Solution(object):
 x=Solution()
 
 q = 10
+e = 4
+print "Question",q
+print "Expect",e
+a = x.countPrimes(q)
+print "Result",a
+print e==a
+
+q = 1000000
 e = 4
 print "Question",q
 print "Expect",e
