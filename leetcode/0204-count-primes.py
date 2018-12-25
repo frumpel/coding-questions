@@ -15,12 +15,28 @@ class Solution(object):
             yes_primes.append(ii)
         return yes_primes
 
-    def countPrimes(self, n):
+    def countPrimesWithGeneration(self, n):
         """
         :type n: int
         :rtype: int
         """
         return len(self.sieveOfErastothenes(n))
+
+    def countPrimes(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        yes_primes=0
+        not_primes=set()
+        for ii in xrange(2,n):
+            if ii in not_primes:
+                continue
+            for jj in xrange(2*ii,n,ii):
+                not_primes.add(jj)
+            yes_primes+=1
+        return yes_primes
+
 
 x=Solution()
 
@@ -33,7 +49,7 @@ print "Result",a
 print e==a
 
 q = 1000000
-e = 4
+e = 78498
 print "Question",q
 print "Expect",e
 a = x.countPrimes(q)
