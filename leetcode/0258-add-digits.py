@@ -4,6 +4,18 @@ class Solution(object):
         :type num: int
         :rtype: int
         """
+        if num == 0:
+            return 0
+        r=num%9
+        if r==0:
+            r=9
+        return r
+
+    def addDigitsLoops(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
         n=num
         s=0
         while n:
