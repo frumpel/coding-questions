@@ -4,10 +4,8 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        if num == 0:
+        if num <= 0:
             return False
-        # if num == 1:
-        #     return True
         while num//2.0 == num/2.0:
             num//=2.0
         while num//3.0 == num/3.0:
