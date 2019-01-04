@@ -15,16 +15,19 @@ class Solution(object):
         :type S: str
         :rtype: List[int]
         """
-
         n=len(S)
         a=[0]*(n+1)
+        vmin=0
+        vmax=0
         for ii in range(0,len(S)):
             if S[ii]=="I":
-                a[ii+1]=ii+1
+                vmax+=1
+                a[ii+1]=vmax
             else:
-                for jj in range(ii+1):
-                    a[jj]+=1
-                    a[ii+1]=0
+                vmin-=1
+                a[ii+1]=vmin
+        for ii in range(len(a)):
+            a[ii]+=(-vmin)
         return a
 
 
