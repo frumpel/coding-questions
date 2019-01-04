@@ -13,6 +13,7 @@ class Solution(object):
             B=[a,b,c,d]
             if sorted(B)==A:
                 return str(a)+str(b)+":"+str(c)+str(d)
+        return ""
 
 x=Solution()
 
