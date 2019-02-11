@@ -28,9 +28,9 @@ class Solution(object):
         xn2=2*xn
         xp2=2*xp
         # -,-,+
-        print "xn2",xn2,"xn",xn,"xp",xp,"xp2",xp2
-        print "an",an
-        print "ap",ap
+        # print "xn2",xn2,"xn",xn,"xp",xp,"xp2",xp2
+        # print "an",an
+        # print "ap",ap
         for ii in an:
             if -ii > xp:
                 break
