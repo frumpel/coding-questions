@@ -22,7 +22,6 @@ class Solution(object):
                 rp.next=l2
                 l2=l2.next
                 rp=rp.next
-
         if l1!=None:
             rp.next=l1
         if l2!=None:
