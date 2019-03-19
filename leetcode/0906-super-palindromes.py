@@ -12,12 +12,14 @@ class Solution(object):
         :rtype: int
         """
         count=0
-        for ii in range(int(L),int(R)+1):
+        min_root=int(int(L)**0.5)
+        max_root=int(int(R)**0.5)+1
+        for ii in xrange(min_root,max_root+1):
             if self.isPalindrome(str(ii)):
-                root=ii**0.5
-                # print "Palindrome",ii,root
-                if root==int(root) and self.isPalindrome(str(int(root))):
-                    print "Superpalindrome",ii,root
+                square=ii**2
+                # print "Palindrome",ii,square
+                if self.isPalindrome(str(square)) and square>=int(L) and square<=int(R):
+                    print "Superpalindrome",ii,square
                     count+=1
         return count
 
@@ -67,6 +69,24 @@ x=Solution()
 q1 = "4"
 q2 = "1000"
 e = 4
+print "Question",q1,q2
+print "Expect",e
+a = x.superpalindromesInRange(q1,q2)
+print "Result",a
+print e==a
+
+q1 = "92904622"
+q2 = "232747148"
+e = 6
+print "Question",q1,q2
+print "Expect",e
+a = x.superpalindromesInRange(q1,q2)
+print "Result",a
+print e==a
+
+q1 = "43143"
+q2 = "7072263972576"
+e = 6
 print "Question",q1,q2
 print "Expect",e
 a = x.superpalindromesInRange(q1,q2)
